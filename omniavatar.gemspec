@@ -2,6 +2,10 @@
 require File.dirname(__FILE__) + '/lib/omniavatar/version'
 
 Gem::Specification.new do |gem|
+  gem.add_dependency "orm_adapter", "~> 0.4"
+  gem.add_dependency 'activerecord'
+  gem.add_dependency "carrierwave", "~> 0.9"
+
   gem.add_development_dependency 'rspec', '~> 2.14'
 
   gem.name = 'omniavatar'
