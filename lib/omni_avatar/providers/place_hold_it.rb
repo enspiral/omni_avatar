@@ -1,4 +1,4 @@
-require 'omniavatar/url_provider'
+require 'omni_avatar/url_provider'
 
 module OmniAvatar
   module Providers

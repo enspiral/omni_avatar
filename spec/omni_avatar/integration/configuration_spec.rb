@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'omniavatar/has_avatar'
+require 'omni_avatar/has_avatar'
 
 describe "configuring OmniAvatar" do
   context "with no storage layer" do

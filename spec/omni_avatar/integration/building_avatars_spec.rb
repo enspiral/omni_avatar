@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'support/spec_database'
-require 'omniavatar/providers/place_hold_it'
+require 'omni_avatar/providers/place_hold_it'
 
 describe "building avatars" do
   pending "returns avatar with a file object" do

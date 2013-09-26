@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'omniavatar/null_avatar'
-require 'omniavatar/has_avatar'
-require 'omniavatar/avatar'
-require 'omniavatar/providers/place_hold_it'
+require 'omni_avatar/null_avatar'
+require 'omni_avatar/has_avatar'
+require 'omni_avatar/avatar'
+require 'omni_avatar/providers/place_hold_it'
 
 class User
   include OmniAvatar::HasAvatar
