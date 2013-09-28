@@ -3,11 +3,17 @@ require 'omni_avatar/has_avatar'
 
 describe OmniAvatar::HasAvatar do
   subject {
-    AvatarOwner.new
+    owner = AvatarOwner.new
+    owner.avatars = double(:avatars)
+    owner
   }
 
+  def avatar_from(provider_name)
+    double("#{provider_name} avatar", provider_name: provider_name)
+  end
+
   context "mixed into a model" do
-    let(:avatar) { double(:avatar) }
+    let(:avatar) { avatar_from('facebook') }
 
     before :each do
       @klass = stub_const('AvatarOwner', Class.new)
@@ -15,19 +21,13 @@ describe OmniAvatar::HasAvatar do
       @klass.module_eval do
         attr_accessor :avatars
         include OmniAvatar::HasAvatar
-
-        def initialize
-          @avatars = []
-        end
       end
-      #@klass.send(:include, OmniAvatar::HasAvatar)
     end
 
     context "adding avatars" do
       it "adds an avatar to the collection of avatars" do
+        subject.avatars.should_receive(:<<).with(avatar)
         subject.add_avatar avatar
-        subject.avatars.should include(avatar)
-        subject.avatar.should == avatar
       end
     end
   end

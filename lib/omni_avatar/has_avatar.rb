@@ -1,9 +1,10 @@
 require 'omni_avatar/null_avatar'
+require 'omni_avatar/avatar_collection'
 
 module OmniAvatar
   module HasAvatar
     def self.included(base)
-      base.has_many :avatars, class_name: 'OmniAvatar::Avatar', as: :owner
+      base.has_many :avatars, class_name: 'OmniAvatar::Avatar', as: :owner, extend: AvatarCollection
     end
 
     def avatar
@@ -11,9 +12,7 @@ module OmniAvatar
     end
 
     def add_avatar(avatar)
-      if avatar
-        self.avatars << avatar
-      end
+      avatars << avatar
     end
   end
 end
