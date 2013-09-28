@@ -1,3 +1,5 @@
+require 'omni_avatar/null_avatar'
+
 module OmniAvatar
   module HasAvatar
     def self.included(base)
@@ -5,7 +7,7 @@ module OmniAvatar
     end
 
     def avatar
-      NullAvatar.new
+      avatars.first || NullAvatar.new
     end
 
     def add_avatar(avatar)
