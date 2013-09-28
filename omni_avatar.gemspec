@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Provides avatars from a variety of sources.}
   s.description = s.description
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "carrierwave", "~> 0.9"
